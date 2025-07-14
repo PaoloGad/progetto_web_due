@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Generatore di Parole Inventate</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background-color: #f2f2f2;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #parola {
+      margin-top: 2rem;
+      font-size: 2rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Generatore di Parole Inventate</h1>
+  <button onclick="generaParola()">Genera Parola</button>
+  <div id="parola"></div>
+
+  <script>
+    function generaParola() {
+      const sillabe = ["ba", "zo", "tri", "mu", "ki", "ra", "lo", "ve", "ni", "fa", "ga", "tu"];
+      const lunghezza = Math.floor(Math.random() * 3) + 2; // tra 2 e 4 sillabe
+      let parola = "";
+      for (let i = 0; i < lunghezza; i++) {
+        const rand = Math.floor(Math.random() * sillabe.length);
+        parola += sillabe[rand];
+      }
+      document.getElementById("parola").textContent = parola;
+    }
+  </script>
+
+</body>
+</html>
